@@ -1,0 +1,62 @@
+[
+  {
+    "id": "client-001",
+    "name": "Sarah Johnson",
+    "email": "sarah@bloomfloral.com",
+    "company": "Bloom Floral Studio",
+    "package": "pro",
+    "status": "approved",
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-20T14:30:00Z",
+    "intake": {
+      "businessName": "Bloom Floral Studio",
+      "businessType": "Floral design and event decoration",
+      "targetAudience": "Brides, event planners, corporate clients",
+      "mainChallenge": "Responding to inquiries quickly and creating detailed proposals",
+      "currentTools": "Gmail, Google Docs, Instagram",
+      "desiredOutcomes": "Save 5+ hours per week on client communication, professional proposals",
+      "tonePreference": "Warm, elegant, professional",
+      "package": "pro"
+    }
+  },
+  {
+    "id": "client-002",
+    "name": "Marcus Rivera",
+    "email": "marcus@riveracoaching.com",
+    "company": "Rivera Business Coaching",
+    "package": "enterprise",
+    "status": "review",
+    "createdAt": "2024-01-18T09:00:00Z",
+    "updatedAt": "2024-01-22T11:00:00Z",
+    "intake": {
+      "businessName": "Rivera Business Coaching",
+      "businessType": "Executive and small business coaching",
+      "targetAudience": "Small business owners, startup founders",
+      "mainChallenge": "Scaling content creation and client onboarding processes",
+      "currentTools": "Notion, Zoom, Calendly, LinkedIn",
+      "desiredOutcomes": "Automated onboarding, consistent content calendar, faster SOPs",
+      "tonePreference": "Direct, motivational, results-oriented",
+      "package": "enterprise"
+    }
+  },
+  {
+    "id": "client-003",
+    "name": "Priya Patel",
+    "email": "priya@cleanslateaccounting.com",
+    "company": "Clean Slate Accounting",
+    "package": "starter",
+    "status": "generating",
+    "createdAt": "2024-01-23T13:00:00Z",
+    "updatedAt": "2024-01-23T13:30:00Z",
+    "intake": {
+      "businessName": "Clean Slate Accounting",
+      "businessType": "Bookkeeping and tax preparation for small businesses",
+      "targetAudience": "Freelancers, solopreneurs, small business owners",
+      "mainChallenge": "Explaining complex financial concepts in simple terms",
+      "currentTools": "QuickBooks, Slack, email",
+      "desiredOutcomes": "Better client education emails, FAQ responses, process documentation",
+      "tonePreference": "Friendly, clear, trustworthy",
+      "package": "starter"
+    }
+  }
+]
