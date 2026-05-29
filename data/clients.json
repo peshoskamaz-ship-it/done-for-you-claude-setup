@@ -58,5 +58,25 @@
       "tonePreference": "Friendly, clear, trustworthy",
       "package": "starter"
     }
+  },
+  {
+    "id": "client-1780027442191",
+    "name": "Test Co",
+    "email": "demo@testco.com",
+    "company": "Test Co",
+    "package": "starter",
+    "status": "review",
+    "createdAt": "2026-05-29T04:04:02.191Z",
+    "updatedAt": "2026-05-29T04:04:02.191Z",
+    "intake": {
+      "businessName": "Test Co",
+      "businessType": "Consulting",
+      "targetAudience": "SMBs",
+      "mainChallenge": "Email",
+      "currentTools": "Gmail",
+      "desiredOutcomes": "Save time",
+      "tonePreference": "Professional",
+      "package": "starter"
+    }
   }
 ]

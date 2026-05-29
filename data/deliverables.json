@@ -28,5 +28,25 @@
     "status": "pending",
     "createdAt": "2024-01-22T10:00:00Z",
     "updatedAt": "2024-01-22T10:00:00Z"
+  },
+  {
+    "id": "del-sp-1780027442193",
+    "clientId": "client-1780027442191",
+    "type": "system-prompt",
+    "title": "Custom System Prompt for Test Co",
+    "content": "# Custom AI System Prompt for Test Co\n\nYou are a professional AI assistant for Test Co, a Consulting.\n\n## Your Identity\nYou represent Test Co with a Professional tone. You are knowledgeable, helpful, and always focused on serving SMBs.\n\n## Core Responsibilities\n- Address the primary challenge: Email\n- Always align responses with the goal of: Save time\n- Maintain consistency with existing tools: Gmail\n\n## Behavioral Guidelines\n1. Always greet clients warmly and professionally\n2. Ask clarifying questions before providing solutions\n3. Offer specific, actionable advice tailored to Consulting\n4. Keep responses concise but comprehensive\n5. End every interaction with a clear next step\n\n## Tone & Voice\n- Style: Professional\n- Audience: SMBs\n- Focus: Solutions-oriented, results-driven\n\n## Never Do\n- Provide information outside your area of expertise\n- Make promises you cannot keep\n- Use jargon unfamiliar to your audience\n- Give generic, one-size-fits-all responses\n\nAlways remember: every interaction is an opportunity to demonstrate the value of Test Co.",
+    "status": "pending",
+    "createdAt": "2026-05-29T04:04:02.193Z",
+    "updatedAt": "2026-05-29T04:04:02.193Z"
+  },
+  {
+    "id": "del-sop-1780027442195",
+    "clientId": "client-1780027442191",
+    "type": "sop",
+    "title": "AI Usage SOP for Test Co",
+    "content": "# AI Usage SOP for Test Co\n\n## Overview\nThis Standard Operating Procedure outlines how to integrate Claude AI into your daily Consulting workflow.\n\n## Daily Workflow Integration\n\n### Morning Routine (15 mins)\n1. Review pending client communications\n2. Use Claude to draft responses using your custom system prompt\n3. Personalize and send\n\n### Client Communication Prompts\n\n**Prompt 1: New Inquiry Response**\n\"Using the Test Co system prompt, respond to this new inquiry: [paste inquiry]. Keep it Professional and end with a clear next step.\"\n\n**Prompt 2: Follow-Up Message**\n\"Write a follow-up message to [client name] who we spoke with [X days ago] about [topic]. Reference our previous conversation and offer a clear next step.\"\n\n**Prompt 3: Proposal Draft**\n\"Create a professional proposal for [client name] for [service/product]. Include an overview, what's included, timeline, and next steps.\"\n\n## Weekly Checklist\n- [ ] Review and update system prompt if needed\n- [ ] Document new use cases that worked well\n- [ ] Create templates for repeated requests\n- [ ] Measure time saved vs. previous week\n\n## Best Practices for Consulting\n1. Always review AI output before sending\n2. Personalize with specific client details\n3. Keep a library of your best prompts\n4. Track which prompts get the best client responses",
+    "status": "pending",
+    "createdAt": "2026-05-29T04:04:02.194Z",
+    "updatedAt": "2026-05-29T04:04:02.194Z"
   }
 ]
