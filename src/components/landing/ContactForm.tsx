@@ -1,18 +1,13 @@
 'use client'
 
 import { useState, FormEvent } from 'react'
-import { Send, CheckCircle } from 'lucide-react'
-import Button from '@/components/ui/Button'
+import { Send, CheckCircle, Mail, Building, User, MessageSquare } from 'lucide-react'
+
+const inputClass = 'w-full px-4 py-3 bg-white/5 border border-white/10 focus:border-purple-DEFAULT/60 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-DEFAULT/20 transition-all text-sm'
 
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
-  const [form, setForm] = useState({
-    name: '',
-    email: '',
-    business: '',
-    message: '',
-    package: '',
-  })
+  const [form, setForm] = useState({ name: '', email: '', business: '', message: '', package: '' })
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault()
@@ -23,11 +18,7 @@ export default function ContactForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       })
-      if (res.ok) {
-        setStatus('success')
-      } else {
-        setStatus('error')
-      }
+      setStatus(res.ok ? 'success' : 'error')
     } catch {
       setStatus('error')
     }
@@ -35,126 +26,75 @@ export default function ContactForm() {
 
   if (status === 'success') {
     return (
-      <section id="contact" className="py-24 bg-white dark:bg-gray-950">
+      <section id="contact" className="py-32 bg-[#0A0919]">
         <div className="max-w-xl mx-auto px-4 text-center">
-          <div className="inline-flex p-4 bg-green-100 dark:bg-green-900/30 rounded-full mb-6">
-            <CheckCircle className="w-10 h-10 text-green-600 dark:text-green-400" />
+          <div className="inline-flex p-5 bg-green-500/10 rounded-3xl mb-6">
+            <CheckCircle className="w-12 h-12 text-green-400" />
           </div>
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
-            Message Received!
-          </h3>
-          <p className="text-gray-600 dark:text-gray-300">
-            Thanks for reaching out. We&apos;ll be in touch within 24 hours to schedule your free discovery call.
-          </p>
+          <h3 className="text-3xl font-black text-white mb-3">Message Received!</h3>
+          <p className="text-gray-400 text-lg">We&apos;ll be in touch within 24 hours to schedule your free discovery call.</p>
         </div>
       </section>
     )
   }
 
   return (
-    <section id="contact" className="py-24 bg-white dark:bg-gray-950">
-      <div className="max-w-2xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Let&apos;s Build Your AI Setup
+    <section id="contact" className="py-32 bg-[#0A0919] relative overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-DEFAULT/10 rounded-full blur-3xl" />
+      </div>
+
+      <div className="relative max-w-2xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-16">
+          <p className="text-purple-DEFAULT font-semibold text-sm tracking-widest uppercase mb-4">Get Started</p>
+          <h2 className="text-4xl sm:text-5xl font-black text-white mb-6">
+            Let&apos;s build your{' '}
+            <span className="gradient-text">AI setup</span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
-            Fill out the form below and we&apos;ll reach out to schedule your free 20-minute discovery call.
-          </p>
+          <p className="text-xl text-gray-400">Fill out the form and we&apos;ll schedule your free 20-minute discovery call.</p>
         </div>
 
-        <form
-          onSubmit={handleSubmit}
-          className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700"
-        >
-          <div className="grid sm:grid-cols-2 gap-6 mb-6">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-                Your Name *
-              </label>
-              <input
-                type="text"
-                required
-                value={form.name}
-                onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
-                placeholder="Jane Smith"
-              />
+        <form onSubmit={handleSubmit} className="bg-white/[0.03] border border-white/10 rounded-3xl p-8 sm:p-10">
+          <div className="grid sm:grid-cols-2 gap-4 mb-4">
+            <div className="relative">
+              <User className="absolute left-3 top-3.5 w-4 h-4 text-gray-600" />
+              <input type="text" required placeholder="Your Name" value={form.name} onChange={e => setForm(f => ({...f, name: e.target.value}))} className={inputClass + ' pl-10'} />
             </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-                Email Address *
-              </label>
-              <input
-                type="email"
-                required
-                value={form.email}
-                onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
-                placeholder="jane@yourbusiness.com"
-              />
+            <div className="relative">
+              <Mail className="absolute left-3 top-3.5 w-4 h-4 text-gray-600" />
+              <input type="email" required placeholder="Email Address" value={form.email} onChange={e => setForm(f => ({...f, email: e.target.value}))} className={inputClass + ' pl-10'} />
             </div>
           </div>
 
-          <div className="mb-6">
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-              Business Name *
-            </label>
-            <input
-              type="text"
-              required
-              value={form.business}
-              onChange={(e) => setForm((f) => ({ ...f, business: e.target.value }))}
-              className="w-full px-4 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
-              placeholder="Your Business Name"
-            />
+          <div className="relative mb-4">
+            <Building className="absolute left-3 top-3.5 w-4 h-4 text-gray-600" />
+            <input type="text" required placeholder="Business Name" value={form.business} onChange={e => setForm(f => ({...f, business: e.target.value}))} className={inputClass + ' pl-10'} />
           </div>
 
-          <div className="mb-6">
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-              Package Interest
-            </label>
-            <select
-              value={form.package}
-              onChange={(e) => setForm((f) => ({ ...f, package: e.target.value }))}
-              className="w-full px-4 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
-            >
-              <option value="">Not sure yet</option>
-              <option value="starter">Starter — $800</option>
-              <option value="pro">Pro — $1,500</option>
-              <option value="enterprise">Enterprise — $2,500</option>
+          <div className="mb-4">
+            <select value={form.package} onChange={e => setForm(f => ({...f, package: e.target.value}))} className={inputClass + ' appearance-none'}>
+              <option value="" className="bg-gray-900">Package Interest (optional)</option>
+              <option value="starter" className="bg-gray-900">Starter — $800</option>
+              <option value="pro" className="bg-gray-900">Pro — $1,500</option>
+              <option value="enterprise" className="bg-gray-900">Enterprise — $2,500</option>
             </select>
           </div>
 
-          <div className="mb-8">
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-              Tell us about your biggest challenge *
-            </label>
-            <textarea
-              required
-              rows={4}
-              value={form.message}
-              onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
-              className="w-full px-4 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent resize-none"
-              placeholder="What's taking up the most time in your business? What would you love AI to help with?"
-            />
+          <div className="relative mb-8">
+            <MessageSquare className="absolute left-3 top-3.5 w-4 h-4 text-gray-600" />
+            <textarea required rows={4} placeholder="What's your biggest challenge? What would you love AI to help with?" value={form.message} onChange={e => setForm(f => ({...f, message: e.target.value}))} className={inputClass + ' pl-10 resize-none'} />
           </div>
 
-          {status === 'error' && (
-            <p className="text-red-600 dark:text-red-400 text-sm mb-4">
-              Something went wrong. Please try again.
-            </p>
-          )}
+          {status === 'error' && <p className="text-red-400 text-sm mb-4">Something went wrong. Please try again.</p>}
 
-          <Button
+          <button
             type="submit"
-            size="lg"
             disabled={status === 'loading'}
-            className="w-full"
+            className="w-full flex items-center justify-center gap-2 py-4 bg-purple-DEFAULT hover:bg-purple-dark text-white font-bold rounded-2xl transition-all duration-300 hover:shadow-glow disabled:opacity-50"
           >
-            <Send className="w-4 h-4 mr-2" />
+            <Send className="w-4 h-4" />
             {status === 'loading' ? 'Sending...' : 'Send Message'}
-          </Button>
+          </button>
         </form>
       </div>
     </section>
