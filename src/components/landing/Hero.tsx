@@ -3,7 +3,7 @@ import { ArrowRight, Sparkles, Zap, Shield, Clock } from 'lucide-react'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-navy">
+    <section className="relative min-h-screen flex items-center overflow-hidden" style={{background:'linear-gradient(135deg,#0F0E17 0%,#1a1040 50%,#0F0E17 100%)'}}>
       {/* Animated background orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-float" />
@@ -28,7 +28,7 @@ export default function Hero() {
           with Claude AI
         </h1>
 
-        <p className="max-w-2xl mx-auto text-xl sm:text-2xl text-gray-400 leading-relaxed mb-12 animate-fade-in-up-delay-2">
+        <p className="max-w-2xl mx-auto text-xl sm:text-2xl text-white leading-relaxed mb-12 animate-fade-in-up-delay-2">
           We build custom Claude AI configurations — system prompts, prompt playbooks, and SOPs —
           tailored specifically to your business. Get results from day one.
         </p>
@@ -51,7 +51,7 @@ export default function Hero() {
         </div>
 
         {/* Trust indicators */}
-        <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-gray-500">
+        <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-white">
           {[
             { icon: Clock, text: 'Setup in 5–7 days' },
             { icon: Zap, text: '100% custom to your business' },
@@ -73,7 +73,7 @@ export default function Hero() {
           ].map((stat) => (
             <div key={stat.label} className="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm">
               <div className="text-2xl font-black text-white">{stat.value}</div>
-              <div className="text-xs text-gray-400 mt-0.5">{stat.label}</div>
+              <div className="text-xs text-white mt-0.5">{stat.label}</div>
             </div>
           ))}
         </div>
