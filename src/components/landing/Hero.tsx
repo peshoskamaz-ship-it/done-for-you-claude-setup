@@ -3,7 +3,7 @@ import { ArrowRight, Sparkles, Zap, Shield, Clock } from 'lucide-react'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-navy">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#0F0E17] text-white">
       {/* Animated background orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-float" />
